@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center" style="background-image:linear-gradient(rgba(255,0,0,0), rgba(255,0,0,0))">
+    <h1>Create Account</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>First Name</p>
+        <input type="text" name="firstname" placeholder="First Name">
+        <p>Last Name</p>
+        <input type="text" name="lastname" placeholder="Last Name">
+        <p>Email</p>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <p>User Name</p>
+        <input type="text" name="username" placeholder="username" required>
+        <p>Password</p>
+        <input type="password" name="psd" placeholder="Enter a Password" required>
+        <p>Confirm Password</p>
+        <input type="password" name="cpsd" placeholder="Re Enter Password" required>
+        <p></p>
+        <input class="btn-success btn-lg buttn1" type="submit"></input>
+    </form>
+    {% for m in messages %}
+    <h2>{{ m }}</h2>
+    {% endfor %}
+</div>
+</body>
+</html>
